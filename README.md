@@ -136,7 +136,8 @@ This repository includes comprehensive tools and documentation for managing deve
 ./scripts/deploy.sh
 ```
 
-📖 **For detailed workflow documentation, see [DEVELOPMENT.md](DEVELOPMENT.md)**
+📖 **For detailed workflow documentation, see [DEVELOPMENT.md](DEVELOPMENT.md)**  
+🚀 **For deployment instructions, see [DEPLOYMENT.md](DEPLOYMENT.md)**
 
 ## 📁 Project Structure
 
