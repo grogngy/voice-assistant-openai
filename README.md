@@ -16,6 +16,22 @@ A Flask app for real-time voice and text chat with OpenAI GPT, using Google Clou
 
 ## 🚀 Quick Start
 
+### 🌐 Deploy to Google Cloud (Get Live URL)
+
+**Get your Voice Assistant live in 2 minutes:**
+
+```bash
+git clone https://github.com/grogngy/voice-assistant-openai.git
+cd voice-assistant-openai
+cp .env.example .env
+# Edit .env with your API keys
+./scripts/deploy.sh
+```
+
+**Your live URL will be displayed after deployment!**
+
+For detailed deployment instructions, see [LIVE_URL_GUIDE.md](LIVE_URL_GUIDE.md).
+
 ### Local Development
 
 1. **Clone and Setup**
@@ -97,11 +113,20 @@ docker run -p 8080:8080 --env-file .env voice-assistant-openai
 
 ## ☁️ Google Cloud Deployment
 
+### 🎯 Get Live URL (Production Ready)
 ```bash
-# Deploy to Cloud Run
+# One-command deployment to get live URL
 ./scripts/deploy.sh
 
-# Or manually
+# Get URL of existing deployment
+./scripts/get-url.sh
+```
+
+**📖 Complete deployment guide: [LIVE_URL_GUIDE.md](LIVE_URL_GUIDE.md)**
+
+### Manual Deployment
+```bash
+# Deploy to Cloud Run
 gcloud run deploy voice-assistant-openai \
     --source . \
     --platform managed \
@@ -116,9 +141,11 @@ This repository includes comprehensive tools and documentation for managing deve
 ### Key Scripts
 
 - `./setup.sh` - Local environment setup
+- `./scripts/deploy.sh` - Deploy to Google Cloud and get live URL
+- `./scripts/get-url.sh` - Get the live URL of deployed service
+- `./scripts/status.sh` - Check service health and status
 - `./scripts/gcloud-setup.sh` - Google Cloud Shell setup
 - `./scripts/git-sync.sh` - Git workflow helper
-- `./scripts/deploy.sh` - Deployment automation
 
 ### Workflow Commands
 
