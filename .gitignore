@@ -193,3 +193,7 @@ audio_files/
 *.mp3
 *.m4a
 *.flac
+
+# Deployment URLs and secrets
+.deployment-url
+.service-info
