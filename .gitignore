@@ -1,2 +1,22 @@
+
+# Python virtual environments
+my_env/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment variables and secrets
 .env
 *.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# SSL certs
+certs/
+
+# Temp files
+temp_audio.webm
+output.mp3

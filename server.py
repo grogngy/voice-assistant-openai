@@ -1,3 +1,24 @@
+
+
+# --- Dependency check block ---
+missing = []
+try:
+    import flask
+except ImportError:
+    missing.append('flask')
+try:
+    import flask_cors
+except ImportError:
+    missing.append('flask-cors')
+try:
+    import dotenv
+except ImportError:
+    missing.append('python-dotenv')
+if missing:
+    print("\n[ERROR] Required packages missing: {}".format(", ".join(missing)))
+    print("Please run: pip install -r requirements.txt or install the missing packages in your environment.")
+    exit(1)
+
 import base64
 import os
 import json
@@ -67,10 +88,15 @@ def process_message_route():
 
 # ...existing code...
 
+
 if __name__ == "__main__":
+    import sys
+    port = int(os.environ.get("PORT", 8080))
+    use_ssl = os.environ.get("USE_SSL", "0") == "1"
+    ssl_ctx = (r'certs/cert.pem', r'certs/key.pem') if use_ssl else None
     app.run(
-        port=8000,
+        port=port,
         host='0.0.0.0',
-    ssl_context=(r'certs/cert.pem', r'certs/key.pem')
+        ssl_context=ssl_ctx
     )
 # ...existing code...
